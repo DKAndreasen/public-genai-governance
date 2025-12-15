@@ -39,7 +39,11 @@ to the retrieved information.
 
 Tests whether the user question/mesagges actually request info? If so, on one or more area?
 
-Additionally, based on the knowlegde of the knowledge base, would a single area of interest from the user actually 
+Additionally, based on the knowledge of the knowledge base, would a single area of interest from the user actually 
 require multiple queries?
 
 Loop over each of these derived queries.
+
+#TODO: Add examples of splitting user input in the retrieval sub process and collecting all retrieved material for one
+answer generation call versus looping over the various parts of a user message generating answers for each part 
+separately and then collecting them in one answer at the end.
