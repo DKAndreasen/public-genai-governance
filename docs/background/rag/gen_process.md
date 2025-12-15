@@ -2,7 +2,7 @@
 
 The simplest part of a RAG system is the generation of the response.
 
-When information/context have been retrieved, the system prompt together with the user question are combined and 
+When [information/context has been retrieved](./retrival_system.md), the system prompt together with the user question are combined and 
 passed to the text generation API. 
 
 Notice that the user question needs not be the actual message the user wrote to the system, it might represent a part 
