@@ -9,7 +9,7 @@ Notice that the user question needs not be the actual message the user wrote to 
 of it and a more focused/lean version of it.
 
 ```mermaid
-graph TD;
+graph TD
     ri@{ shape: lean-r, label: "Retrieved information" }
     prompt@{ shape: doc, label: "System prompt" }
     input@{ shape: manual-input, label: "`User Question
@@ -20,12 +20,12 @@ graph TD;
     completion endpoint`" }
     ui@{ shape: display, label: "User interface" }
     
-    input->collect
-    ri->collect
-    prompt->collect
-    collect->caller
-    genai<->caller
-    caller->ui
+    input --> collect
+    ri --> collect
+    prompt --> collect
+    collect --> caller
+    genai <--> caller
+    caller --> ui
 ```
 
 if this is just part of a loop to collect answers that should be combined into a complete response, then the response 
