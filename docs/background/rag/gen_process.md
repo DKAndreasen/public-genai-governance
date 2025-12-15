@@ -16,8 +16,8 @@ graph TD
     (possibly rewritten and simplified)`" }
     collect@{ shape: hex, label: "Collect into message struct" }
     caller@{ shape: process, label: "Call generation API" }
-    genai@{ shape: subproc, label: "`Text generation
-    completion endpoint`" }
+    genai@{ shape: subproc, label: "Text generation
+    completion endpoint" }
     ui@{ shape: display, label: "User interface" }
     
     input --> collect
