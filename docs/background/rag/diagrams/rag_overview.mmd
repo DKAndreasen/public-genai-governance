@@ -1,0 +1,14 @@
+graph TD;
+    data@{ shape: lean-r, label: "Data" }
+    ingest[["Ingestion"]]
+    db[(Database)]
+    data-->ingest
+    ingest-->db
+
+    input@{ shape: manual-input, label: "User Question" }
+    agent[["Searching agent/\nretrival system"]]
+    input-->agent
+    agent<-->db
+
+    genai[["generation process"]]
+    agent-->genai
