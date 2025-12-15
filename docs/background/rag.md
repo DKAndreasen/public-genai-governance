@@ -10,7 +10,8 @@ graph TD;
     ingest-->db
     
     input@{ shape: manual-input, label: "User Question" }
-    agent[["Searching agent/\nretrival system"]]
+    agent[["`Searching agent/
+    retrival system`"]]
     input-->agent
     agent<-->db
     
@@ -27,6 +28,18 @@ assumed present in the above diagram.
 - [Searching agent/retrival system](rag/retrival_system.md)
 - [Generation process](rag/gen_process.md)
 
+## Important possible additions
+
+### Varification
 In addition to this there could/should also be an answer verification process
 with a final verification of the provided answer, that it is truthfull according 
 to the retrieved information.
+
+### User input splitting
+
+Tests whether the user question/mesagges actually request info? If so, on one or more area?
+
+Additionally, based on the knowlegde of the knowledge base, would a single area of interest from the user actually 
+require multiple queries?
+
+Loop over each of these derived queries.
