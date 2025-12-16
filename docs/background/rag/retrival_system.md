@@ -42,7 +42,8 @@ graph TD;
     input --> embed
     embed --> retriever
     retriever <==> db
-    subgraph re-ranker
+    retriever --> reRanker
+    subgraph reRanker
         loopCondition@{ shape: decision, label: "k #lt k_max"}
         crossEncoder["`Calculate cross-encoder score between
         k'th retrieved document and user message`"]
@@ -55,7 +56,6 @@ graph TD;
         loopCondition --- no ---> sorter
         crossEncoder -.-> storage
         storage -.-> sorter
-        re-ranker["Cross-encoder model"]
     end
     sorter --> output
 ```
