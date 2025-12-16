@@ -46,7 +46,7 @@ graph TD;
     input ----> crossEncoder
     
     subgraph re-ranker
-        loopCondition@{ shape: decision, label: "k #lt k_max"}
+        loopCondition@{ shape: decision, label: "k &lt; k_max"}
         crossEncoder["`Calculate cross-encoder score between
         k'th retrieved document and user message`"]
         storage@{ shape: das, label: "Store cross-encoder scores"}
