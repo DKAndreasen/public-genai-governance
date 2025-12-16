@@ -52,7 +52,7 @@ graph TD;
         
         input ----> crossEncoder
         crossEncoder --> loopCondition
-        loopCondition --- "no" ---> sorter
+        loopCondition --- no ---> sorter
         crossEncoder -.-> storage
         storage -.-> sorter
         re-ranker["Cross-encoder model"]
