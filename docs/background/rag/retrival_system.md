@@ -54,7 +54,7 @@ graph TD;
         loopCondition -- yes --> crossEncoder
         
         crossEncoder --> loopCondition
-        loopCondition --- no ---> sorter
+        loopCondition -- no ---> sorter
         crossEncoder -.-> storage
         storage -.-> sorter
     end
