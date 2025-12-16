@@ -48,12 +48,12 @@ graph TD;
         k'th retrieved document and user message`"]
         storage@{ shape: das, label: "Store cross-encoder scores"}
         sorter["Sort retrieved documents by cross-encoder score"]
-        loopCondition -"yes"-> crossEncoder
+        loopCondition -- yes --> crossEncoder
         
         input ----> crossEncoder
         crossEncoder --> loopCondition
-        loopCondition --"no"--> sorter
-        crossEncoder -..-> storage
+        loopCondition --- "no" ---> sorter
+        crossEncoder -.-> storage
         storage -.-> sorter
         re-ranker["Cross-encoder model"]
     end
