@@ -40,10 +40,11 @@ graph TD;
     output@{ shape: in-out, label: "context struct with parts of 
     documents and possibly metadata" }
     input --> embed
+    input ---> crossEncoder
     embed --> retriever
     retriever <==> db
-    retriever --> reRanker
-    subgraph reRanker
+    retriever --> re-ranker
+    subgraph re-ranker
         loopCondition@{ shape: decision, label: "k #lt k_max"}
         crossEncoder["`Calculate cross-encoder score between
         k'th retrieved document and user message`"]
@@ -51,7 +52,6 @@ graph TD;
         sorter["Sort retrieved documents by cross-encoder score"]
         loopCondition -- yes --> crossEncoder
         
-        input ----> crossEncoder
         crossEncoder --> loopCondition
         loopCondition --- no ---> sorter
         crossEncoder -.-> storage
