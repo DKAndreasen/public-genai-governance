@@ -43,7 +43,7 @@ graph TD;
     embed --> retriever
     retriever <==> db
     subgraph re-ranker
-        loopCondition<"k < k_max">
+        loopCondition<"k \< k_max">
         crossEncoder["Calculate cross-encoder score between
         k'th retrieved document and user message"]
         storage["Store cross-encoder scores"]
