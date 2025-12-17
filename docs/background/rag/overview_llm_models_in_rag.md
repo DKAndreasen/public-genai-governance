@@ -71,7 +71,30 @@ that might make it hard to represent all of it in one vector.
 
 ## Cross-encoder models
 
-Cross-encorder models are similar to embedding models in that they are built fra base encoder models. 
+Cross-encorder models are similar to embedding models in that they are built from base token encoder models. 
+But instead of outputting a vector representating the simantical meaning of a text piece, a cross-encoder
+takes two pieces of text and outputs a number. The cross-encoder is then trained to output a number close to one if
+the two texts are similar and a number closer to zero if they different.
+
+Like with the embedding models this gives the possiblity to rank a list of texts by how similar they are to a given 
+reference text.
+
+This, though, is much more computationally heavy than calculating the distance between vectors and therefore in RAG 
+systems the cross encoder is most often used after an embedding models have been used to select e.g. the 50 most similar
+(in the embedding model sense) pieces of text from a database of e.g. 10.000 texts. The cross encoder is then being run 
+with each of the preselected 50 texts and the reference text. The results from the cross encoder is then used to re-rank
+the texts, so only the five most similar (in the cross-encoder sense) texts are passed on for further processing in the 
+system.
+
+The principle advantage of cross-encoders compared to embedding models is that the simantical meaning of a piece of text
+is not squeezed into a single vector (representing the entire text) instead all the token-vectors from both candidate 
+and reference text are processed by the cross-encoder.
+
+Both cross encoder models and embedding models suffers from the fact that you have to be very aware what kind of 
+semantical similarity the models are trained for. E.g. are questions about toys and question about foods more similar to
+each other, because they are questions or to tweets about childrens play (tweets might have distinct simantics) or to 
+recipes, which again have a certain form and way of phrasing. All this can be accounted for during training, but if you 
+have not trained the model yourself, you better be aware and test it. 
 
 ## Classification models
 
