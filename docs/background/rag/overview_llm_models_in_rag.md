@@ -69,6 +69,16 @@ Embedding models are trained to be able to embed pieces of text (called chunks) 
 even more. The longer the text, though, the more likely it is that the text concerns simantically distinct topics, 
 that might make it hard to represent all of it in one vector. 
 
+Examples of embedding models are 
+OpenAI's [text-embedding-3-large](https://platform.openai.com/docs/api-reference/embeddings),
+intfloat's [multilingual-e5-large](https://huggingface.co/intfloat/multilingual-e5-large), 
+Qwen's [Qwen3-Embedding-4B](https://huggingface.co/Qwen/Qwen3-Embedding-4B).
+
+The [Massive Text Embedding Benchmark (MTEB)](https://embeddings-benchmark.github.io/mteb/) project maintains an 
+[overview](https://huggingface.co/spaces/mteb/leaderboard)
+over a large number of embedding models. To see a list of relevant "danish" models chose "RTEB Multilingual" in the menu
+on the left side of the dashboard under the heading "Retrieval".
+
 ## Cross-encoder models
 
 Cross-encorder models are similar to embedding models in that they are built from base token encoder models. 
@@ -95,6 +105,10 @@ semantical similarity the models are trained for. E.g. are questions about toys 
 each other, because they are questions or to tweets about childrens play (tweets might have distinct simantics) or to 
 recipes, which again have a certain form and way of phrasing. All this can be accounted for during training, but if you 
 have not trained the model yourself, you better be aware and test it. 
+
+Examples of cross-encoder models, that can be used for re-ranking 
+BAAI's (Beijing Academy of Artificial Intelligence) [bge-reranker-v2-m3](https://huggingface.co/BAAI/bge-reranker-v2-m3)
+and KennethTM's [MiniLM-L6-danish-reranker-v2](https://huggingface.co/KennethTM/MiniLM-L6-danish-reranker-v2).
 
 ## Classification models
 
