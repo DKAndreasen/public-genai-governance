@@ -112,4 +112,21 @@ and KennethTM's [MiniLM-L6-danish-reranker-v2](https://huggingface.co/KennethTM/
 
 ## Classification models
 
+This is a very wide group of machine learning models, but a subgroup is transformer based and handles sentences. 
+These are used heavily in traditional chatbot solutions, where a user message is mapped to a predefined _intend_. 
+This mapping is exactly a classification of the user input into the predefined categories of different conversation 
+trajectories/intends. This can also be used in RAG solutions to divide user inputs into different flows with 
+different knowledge bases, but requires specific training. 
+
+For the bacis intro see the [intro to classification](https://huggingface.co/learn/llm-course/chapter2/2) and the 
+[finetuning of models](https://huggingface.co/learn/llm-course/chapter3/1), but see ressources are technical.
+
+In RAG systems it seems very common to use generative LLM's to perform classification task instead of using 
+dedicated models. This removes the work overhead of training a model and makes it possible to create and experiment 
+with the solution at a much higher pace. On the downside it requires the system to invoke a much larger
+model for simple tasks and it still requires a good testing of the generative LLMs performance. 
+
+It is also worth to consider if requests to the generative model and its choices can be collected and later on used for
+training a smaller model to reduce the footprint of the solution.
+
 ## Translation models
