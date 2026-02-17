@@ -1,11 +1,4 @@
-## Suggestions for risk management methods:
-
-I see two main paths for managing risks:
-
-
-### 1: Using a simple markdown table for at traditional document approach 
-
-
+**Risk-log**  
 A risk log could be built as a simple markdown table.
 Collaborators will have to have a github account and know their way around making change suggestions via PRs.
 The calculations will need to be done by hand offcourse.
