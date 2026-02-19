@@ -130,3 +130,8 @@ It is also worth to consider if requests to the generative model and its choices
 training a smaller model to reduce the footprint of the solution.
 
 ## Translation models
+
+Like with the classification task the task of translation can be handled by a generative model, but it is not needed.
+
+Translation models (google translate) were actually the historical cradle of LLM's and still today it is possible to
+invoke dedicated models for trans
