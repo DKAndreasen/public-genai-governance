@@ -2,6 +2,9 @@
 
 ## Agent frameworks
 
+The tracability/monitoring solution LangFuse has a good [short overview](https://langfuse.com/blog/2025-03-19-ai-agent-comparison) 
+of some of the available agent frameworks (probably those, that, through opentelemetry, integrates with LangFuse)
+
 - Smolagents  
   Focusing on coding agents instead of json-tool using agents. Probably allowing relatively smaller LLMs to power as 
   good agents as the json-tool agents  
