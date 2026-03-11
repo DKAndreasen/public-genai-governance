@@ -28,7 +28,7 @@ Have a general RAG component for os2AI that enables trained (but non-specialist)
 
 ## Prerequisites
 
-- Source code must be open source licened according to [INSERT]()
+- Source code must be open source licensed using an [OSI approved License](https://opensource.org/licenses)
 - The code arcitecturel design must be as modular as sensible
   - Current principal/general idea (that is, dont put too much emphasis on the drawing - its just a quick sketch):
     ```mermaid
@@ -46,8 +46,11 @@ Have a general RAG component for os2AI that enables trained (but non-specialist)
     ```
     Greyed out component are fixed/not part of this task. Others are envisioned as seperate containers using sensible generalise and well-defined endpoints.
 - The UI is openwebUI. The RAG component/solution must integrate with openwebUI
-  - response should follow the openAI-compatible [openResponses standard](https://www.openresponses.org/). This is meant
-    to ensure that the rag solution can be integrated with OpenWebUI as a "model"
+  - response should follow an openAI-compatible chat-completion format. This is to ensure that the rag solution can be 
+    integrated with OpenWebUI as a "model".   
+    It is furthermore a strategic wish, that the RAG component also exposes an endpoint supporting the 
+    [openResponses standard](https://www.openresponses.org/). This is meant to ensure that the component can be used with any other components
+    supporting that open standard (This is not a requirement, if good arguments can be made against it)
   - Document uploads: Needs to be a sensible endpoint, that it would make sense to integrate with any UI.
 - LLM inference is currently rerouted through LiteLLM as an openAI compatible endpoint.
   - Currently the solution revolves around [Mistral Small 3.2](https://huggingface.co/mistralai/Mistral-Small-3.2-24B-Instruct-2506)  
