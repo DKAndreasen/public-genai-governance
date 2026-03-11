@@ -42,7 +42,7 @@ Have a general RAG component for os2AI that enables trained (but non-specialist)
         classDef fixed fill:#f6f6ff,stroke:#ffffff
         class UI,llm fixed
     ```
-    Greyed out component are fixed/not part of this task. Others are envisioned as seperate containers.
+    Greyed out component are fixed/not part of this task. Others are envisioned as seperate containers using sensible generalise and well-defined endpoints.
 - The UI is openwebUI. The RAG component/solution must integrate with openwebUI
   - response should follow the openAI-compatible [openResponses standard](https://www.openresponses.org/). This is meant
     to ensure that the rag solution can be integrated with OpenWebUI as a "model"
@@ -74,9 +74,10 @@ Anyway a more modern setup will hopefully improve the system.
 ## Initial ideas/thougths 
 
 Replace the openwebUI bound RAG-logic with a seperate RAG component where an agent is given access retrieval tools or 
-functions (depending on it being a coding agent or tool-using agent).
+functions (depending on it being a coding agent or tool-using agent).  
 Use a planning/action (ReAct) approach let the agent decide if the retrieved content is sufficient and then answer the
-question.
+question.  
 Build it using Haystack (modularity and community) or smolagents (simplicity)
 
-- Another framework can be chosen, but in our experience LangChain is overengineered, Llamaindex are too focused on science
+- Another framework can be chosen, but in our experience LangChain is overengineered, Llamaindex are too focused on 
+  demonstrating research suggestions (kind of not opinionated enough 🧐). 
