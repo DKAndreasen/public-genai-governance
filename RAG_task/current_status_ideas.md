@@ -36,6 +36,8 @@ Have a general RAG component for os2AI that enables trained (but non-specialist)
         digest@{ shape: procs, label: "Digestion pipes" } <--> ingest
         ingest <--> emb[embedding engine]
         rag <--> llm[LLM inference]
+        rag <--> emb
+        rag <--> vdb
     
         classDef fixed fill:#f6f6ff,stroke:#ffffff
         class UI,llm fixed
