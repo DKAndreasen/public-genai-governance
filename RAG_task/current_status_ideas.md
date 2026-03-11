@@ -6,6 +6,8 @@ of os2AI.
 _All statements below are up for discussions, they are based on current best understanding of both technical aspects 
 and Steering Commitee preferences_
 
+The current overall architecture for os2AI is equivilent to the [AarhusAI architure described here](https://aarhusai.github.io/documentation/technical/architecture.html).
+
 ## Aim
 
 Have a general RAG component for os2AI that enables trained (but non-specialist) municipal workers to create a custom RAG solution.
