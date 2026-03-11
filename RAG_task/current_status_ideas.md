@@ -97,6 +97,22 @@ chatbot = agent(llm, tools=[search])
 response = chatbot(messages)
 ```
 
+### Di-/In-gestion component
+
+The current idea for digestion of docs are to use (/improve) the Jakob M Wang (Aarhus Municipality) initiate project
+[chunkydonkey](https://github.com/jakobmwang/chunkydonkey), that Claude describes with the selling points:
+
+> - Én pipeline, alle filtyper — PDF, Office, HTML, billeder, CSV, arkiver med nested filer. Samme API-kald uanset hvad.
+> - Forstår relationer mellem filer — En zip med index.html der refererer images/graf.png håndteres som en samlet enhed. Billedbeskrivelser flettes ind i de rigtige chunks.
+> - Automatisk dedup — Samme dokument, herunder indlejrede filer som billeder og bilag, lagres og indekseres kun én gang uanset antal kilder. Ingen redundante embeddings, ingen spildt compute. SHA256 sikrer det.
+> - Kildesporing hele vejen — Fra chunk → dokument → kilde. Du kan altid svare på "hvor kommer det svar fra?"
+> - GDPR-compliance by design — Slet en kilde, orphan cleanup rydder alt der ikke længere refereres. Ingen data der hænger.
+> - Governance batteries included — Stale data forsvinder automatisk via touched_at heartbeat. Hvis kildesystemet ikke bekræfter dokumentet eksisterer, ryger det.
+> - Adgangsstyring via source — Segmentering er bare en WHERE-clause. Ingen ACL-tabeller. SharePoint-mappestruktur mapper direkte.
+> - Fleksibel ingestion — Samme pipeline uanset intake: SharePoint-sync, ServiceNow-connector, direkte upload i chatbot, fagsystem-integration. Det eneste der ændres er source-navnet.
+
+### Final notes
+
 - Any other (agent) framework could be chosen, but in our (minor) experience, LangChain is overengineered, Llamaindex are too focused on 
   demonstrating research suggestions (kind of not opinionated enough 🧐). 
 - Suggestions for other component are for sure welcome 
