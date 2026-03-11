@@ -84,5 +84,19 @@ Use a planning/action (ReAct) approach let the agent decide if the retrieved con
 question.  
 Build it using Haystack (modularity and community) or smolagents (simplicity)
 
-- Another framework can be chosen, but in our experience LangChain is overengineered, Llamaindex are too focused on 
+Basically, we want to go from:
+```python
+chatbot = llm()
+result = search()
+prompt = prompt_template(messages, context = result.as_text)
+response = chatbot(prompt)
+```
+to
+```python
+chatbot = agent(llm, tools=[search])
+response = chatbot(messages)
+```
+
+- Any other (agent) framework could be chosen, but in our (minor) experience, LangChain is overengineered, Llamaindex are too focused on 
   demonstrating research suggestions (kind of not opinionated enough 🧐). 
+- Suggestions for other component are for sure welcome 
